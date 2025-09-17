@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos customizados */
+@layer base {
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+  }
+}
+
+/* Garantir que o router-outlet ocupe toda a tela */
+router-outlet {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Estilos para ícones (placeholder) */
+.icon-mission::before { content: "🎯"; }
+.icon-vision::before { content: "👁️"; }
+.icon-values::before { content: "💎"; }
+.icon-code::before { content: "🚚"; }
+.icon-consulting::before { content: "📦"; }
+.icon-cloud::before { content: "🚚"; }
+.icon-support::before { content: "📋"; }
+.icon-phone::before { content: "📞"; }
+.icon-email::before { content: "✉️"; }
+.icon-location::before { content: "📍"; }
+.icon-facebook::before { content: "📘"; }
+.icon-twitter::before { content: "🐦"; }
+.icon-linkedin::before { content: "💼"; }
+.icon-instagram::before { content: "📷"; }
+
+/* Teste para verificar se o Tailwind está funcionando */
+.test-tailwind {
+  @apply bg-blue-500 text-white p-4 rounded;
+}
