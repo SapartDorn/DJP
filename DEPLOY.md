@@ -3,9 +3,10 @@
 ## Configuração para Netlify
 
 ### 1. Configurações de Build no Netlify:
-- **Build Command:** `npm ci && npm run build`
+- **Build Command:** `npm ci && npm run build:static`
 - **Publish Directory:** `dist/djp/browser`
 - **Node Version:** 18.18.0
+- **SSR:** Desabilitado (build estático)
 
 ### 2. Variáveis de Ambiente:
 - `NODE_VERSION=18.18.0`

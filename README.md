@@ -16,7 +16,8 @@ Site institucional da DJP Logística desenvolvido em Angular.
 
 ### Comandos Disponíveis:
 - `npm start` - Servidor de desenvolvimento
-- `npm run build` - Build de produção
+- `npm run build` - Build de produção (com SSR)
+- `npm run build:static` - Build estático (recomendado para Netlify)
 - `npm run build:ssr` - Build com SSR
 - `npm test` - Executar testes
 
