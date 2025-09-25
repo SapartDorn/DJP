@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LogoComponent } from '../logo/logo.component';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule, LogoComponent],
+  imports: [CommonModule],
   template: `
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-secondary-200 shadow-sm">
       <nav class="container mx-auto px-4 py-4">
@@ -17,6 +16,7 @@ import { LogoComponent } from '../logo/logo.component';
             <a href="#home" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300">Início</a>
             <a href="#about" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300">Sobre</a>
             <a href="#services" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300">Serviços</a>
+            <a href="#fleet" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300">Frota</a>
             <a href="#contact" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300">Contato</a>
           </div>
           
@@ -41,6 +41,7 @@ import { LogoComponent } from '../logo/logo.component';
             <a href="#home" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300">Início</a>
             <a href="#about" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300">Sobre</a>
             <a href="#services" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300">Serviços</a>
+            <a href="#fleet" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300">Frota</a>
             <a href="#contact" class="text-secondary-700 hover:text-primary-600 font-medium transition-colors duration-300">Contato</a>
             <a href="#contact" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300 text-center">
               Solicitar Orçamento

@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../components/header/header.component';
-import { LogoComponent } from '../../components/logo/logo.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, HeaderComponent, LogoComponent],
+  imports: [CommonModule, HeaderComponent],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
