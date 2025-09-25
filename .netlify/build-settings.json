@@ -4,7 +4,7 @@
     "publish": "dist/djp/browser"
   },
   "environment": {
-    "NODE_VERSION": "18.18.0",
+    "NODE_VERSION": "20.19.0",
     "NPM_FLAGS": "--production=false"
   },
   "plugins": []

@@ -5,11 +5,11 @@
 ### 1. Configurações de Build no Netlify:
 - **Build Command:** `npm ci && npm run build:static`
 - **Publish Directory:** `dist/djp/browser`
-- **Node Version:** 18.18.0
+- **Node Version:** 20.19.0
 - **SSR:** Desabilitado (build estático)
 
 ### 2. Variáveis de Ambiente:
-- `NODE_VERSION=18.18.0`
+- `NODE_VERSION=20.19.0`
 - `NPM_FLAGS=--production=false`
 
 ### 3. Arquivos de Configuração Criados:

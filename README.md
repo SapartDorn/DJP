@@ -5,9 +5,9 @@ Site institucional da DJP Logística desenvolvido em Angular.
 ## Deploy no Netlify
 
 ### Configurações de Build:
-- **Build Command:** `npm run build`
+- **Build Command:** `npm run build:static`
 - **Publish Directory:** `dist/djp/browser`
-- **Node Version:** 18.18.0
+- **Node Version:** 20.19.0
 
 ### Arquivos de Configuração:
 - `netlify.toml` - Configuração principal do Netlify
