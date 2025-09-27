@@ -1,15 +1,100 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from '../../components/header/header.component';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, HeaderComponent],
+  imports: [CommonModule, HeaderComponent, ReactiveFormsModule],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
-export class Home {
+export class Home implements OnInit {
   currentYear = new Date().getFullYear();
+  
+  // Formulário de contato
+  contactForm!: FormGroup;
+  isSubmitting = false;
+  submitMessage = '';
+  submitSuccess = false;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private contactService: ContactService
+  ) {}
+
+  ngOnInit(): void {
+    this.initializeContactForm();
+  }
+
+  private initializeContactForm(): void {
+    this.contactForm = this.formBuilder.group({
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required, Validators.minLength(10)]]
+    });
+  }
+
+  async onSubmit(): Promise<void> {
+    if (this.contactForm.valid && !this.isSubmitting) {
+      this.isSubmitting = true;
+      this.submitMessage = '';
+      this.submitSuccess = false;
+
+      try {
+        const formData = this.contactForm.value;
+        const result = await this.contactService.sendEmail(formData);
+        
+        this.submitMessage = result.message;
+        this.submitSuccess = result.success;
+        
+        if (result.success) {
+          this.contactForm.reset();
+        }
+      } catch (error) {
+        this.submitMessage = 'Erro inesperado. Tente novamente.';
+        this.submitSuccess = false;
+      } finally {
+        this.isSubmitting = false;
+      }
+    } else {
+      this.markFormGroupTouched();
+    }
+  }
+
+  private markFormGroupTouched(): void {
+    Object.keys(this.contactForm.controls).forEach(key => {
+      const control = this.contactForm.get(key);
+      control?.markAsTouched();
+    });
+  }
+
+  getFieldError(fieldName: string): string {
+    const field = this.contactForm.get(fieldName);
+    if (field?.errors && field.touched) {
+      if (field.errors['required']) {
+        return `${this.getFieldLabel(fieldName)} é obrigatório`;
+      }
+      if (field.errors['email']) {
+        return 'Email inválido';
+      }
+      if (field.errors['minlength']) {
+        const requiredLength = field.errors['minlength'].requiredLength;
+        return `${this.getFieldLabel(fieldName)} deve ter pelo menos ${requiredLength} caracteres`;
+      }
+    }
+    return '';
+  }
+
+  private getFieldLabel(fieldName: string): string {
+    const labels: { [key: string]: string } = {
+      name: 'Nome',
+      email: 'Email',
+      message: 'Mensagem'
+    };
+    return labels[fieldName] || fieldName;
+  }
   
   empresa = {
     nome: 'DJP Logística',
