@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from '../../components/header/header.component';
@@ -10,7 +10,7 @@ import { ContactService } from '../../services/contact.service';
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
-export class Home implements OnInit {
+export class Home implements OnInit, OnDestroy {
   currentYear = new Date().getFullYear();
   
   // Formulário de contato
@@ -18,6 +18,9 @@ export class Home implements OnInit {
   isSubmitting = false;
   submitMessage = '';
   submitSuccess = false;
+  
+  // Botão voltar ao topo
+  showBackToTop = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,6 +29,11 @@ export class Home implements OnInit {
 
   ngOnInit(): void {
     this.initializeContactForm();
+    this.setupScrollListener();
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('scroll', this.checkScrollPosition.bind(this));
   }
 
   private initializeContactForm(): void {
@@ -94,6 +102,29 @@ export class Home implements OnInit {
       message: 'Mensagem'
     };
     return labels[fieldName] || fieldName;
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  private setupScrollListener(): void {
+    window.addEventListener('scroll', () => {
+      this.checkScrollPosition();
+    });
+  }
+
+  private checkScrollPosition(): void {
+    const scrollPosition = window.pageYOffset;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    
+    // Mostrar botão quando estiver próximo ao final da página (últimos 200px)
+    const threshold = 200;
+    this.showBackToTop = scrollPosition + windowHeight >= documentHeight - threshold;
   }
   
   empresa = {
