@@ -22,7 +22,7 @@ import { FontSizeService, FontSize } from '../../services/font-size.service';
       
       <!-- Dropdown Menu -->
       <div 
-        class="absolute top-full mt-2 w-56 sm:w-48 bg-white dark:bg-secondary-800 rounded-lg shadow-lg border border-secondary-200 dark:border-secondary-700 transition-all duration-300 z-50 right-0"
+        class="absolute top-full mt-2 w-56 sm:w-48 bg-white dark:bg-secondary-800 rounded-lg shadow-lg border border-secondary-200 dark:border-secondary-700 transition-all duration-300 z-50 left-0 sm:right-0 sm:left-auto"
         [class.opacity-0]="!isDropdownOpen()"
         [class.invisible]="!isDropdownOpen()"
         [class.opacity-100]="isDropdownOpen()"
