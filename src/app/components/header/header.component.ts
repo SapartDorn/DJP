@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ThemeDirectComponent } from '../theme-direct/theme-direct.component';
+import { FontSizeControlComponent } from '../font-size-control/font-size-control.component';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule, ThemeDirectComponent],
+  imports: [CommonModule, ThemeDirectComponent, FontSizeControlComponent],
   template: `
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-secondary-900/95 backdrop-blur-sm border-b border-secondary-200 dark:border-secondary-700 shadow-sm">
       <nav class="container mx-auto px-4 py-4">
@@ -21,16 +22,18 @@ import { ThemeDirectComponent } from '../theme-direct/theme-direct.component';
             <a href="#contact" class="text-secondary-700 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-300">Contato</a>
           </div>
           
-          <!-- CTA Button and Theme Toggle -->
+          <!-- CTA Button, Font Size Control and Theme Toggle -->
           <div class="hidden md:flex items-center space-x-4">
+            <app-font-size-control></app-font-size-control>
             <app-theme-direct></app-theme-direct>
             <a href="#contact" class="bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-300">
               Solicitar Orçamento
             </a>
           </div>
           
-          <!-- Mobile Menu Button and Theme Toggle -->
+          <!-- Mobile Menu Button, Font Size Control and Theme Toggle -->
           <div class="md:hidden flex items-center space-x-2">
+            <app-font-size-control></app-font-size-control>
             <app-theme-direct></app-theme-direct>
             <button class="p-2 text-secondary-700 dark:text-secondary-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300" (click)="toggleMobileMenu()">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">

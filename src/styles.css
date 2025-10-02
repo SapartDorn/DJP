@@ -61,4 +61,72 @@ i[class*=" icon-"]::before {
 .icon-linkedin::before { content: "💼"; }
 .icon-instagram::before { content: "📷"; }
 
+/* Controle de tamanho da fonte para acessibilidade */
+.font-small {
+  font-size: 0.875rem; /* 14px */
+}
+
+.font-small h1 { font-size: 1.5rem; } /* 24px */
+.font-small h2 { font-size: 1.25rem; } /* 20px */
+.font-small h3 { font-size: 1.125rem; } /* 18px */
+.font-small h4 { font-size: 1rem; } /* 16px */
+.font-small h5 { font-size: 0.875rem; } /* 14px */
+.font-small h6 { font-size: 0.75rem; } /* 12px */
+.font-small p { font-size: 0.875rem; } /* 14px */
+.font-small .text-xs { font-size: 0.625rem; } /* 10px */
+.font-small .text-sm { font-size: 0.75rem; } /* 12px */
+.font-small .text-base { font-size: 0.875rem; } /* 14px */
+.font-small .text-lg { font-size: 1rem; } /* 16px */
+.font-small .text-xl { font-size: 1.125rem; } /* 18px */
+.font-small .text-2xl { font-size: 1.25rem; } /* 20px */
+.font-small .text-3xl { font-size: 1.5rem; } /* 24px */
+.font-small .text-4xl { font-size: 1.75rem; } /* 28px */
+.font-small .text-5xl { font-size: 2rem; } /* 32px */
+
+.font-normal {
+  font-size: 1rem; /* 16px - padrão */
+}
+
+.font-large {
+  font-size: 1.125rem; /* 18px */
+}
+
+.font-large h1 { font-size: 2.25rem; } /* 36px */
+.font-large h2 { font-size: 1.875rem; } /* 30px */
+.font-large h3 { font-size: 1.5rem; } /* 24px */
+.font-large h4 { font-size: 1.25rem; } /* 20px */
+.font-large h5 { font-size: 1.125rem; } /* 18px */
+.font-large h6 { font-size: 1rem; } /* 16px */
+.font-large p { font-size: 1.125rem; } /* 18px */
+.font-large .text-xs { font-size: 0.75rem; } /* 12px */
+.font-large .text-sm { font-size: 0.875rem; } /* 14px */
+.font-large .text-base { font-size: 1.125rem; } /* 18px */
+.font-large .text-lg { font-size: 1.25rem; } /* 20px */
+.font-large .text-xl { font-size: 1.5rem; } /* 24px */
+.font-large .text-2xl { font-size: 1.875rem; } /* 30px */
+.font-large .text-3xl { font-size: 2.25rem; } /* 36px */
+.font-large .text-4xl { font-size: 2.5rem; } /* 40px */
+.font-large .text-5xl { font-size: 3rem; } /* 48px */
+
+.font-extra-large {
+  font-size: 1.25rem; /* 20px */
+}
+
+.font-extra-large h1 { font-size: 2.5rem; } /* 40px */
+.font-extra-large h2 { font-size: 2rem; } /* 32px */
+.font-extra-large h3 { font-size: 1.75rem; } /* 28px */
+.font-extra-large h4 { font-size: 1.5rem; } /* 24px */
+.font-extra-large h5 { font-size: 1.25rem; } /* 20px */
+.font-extra-large h6 { font-size: 1.125rem; } /* 18px */
+.font-extra-large p { font-size: 1.25rem; } /* 20px */
+.font-extra-large .text-xs { font-size: 0.875rem; } /* 14px */
+.font-extra-large .text-sm { font-size: 1rem; } /* 16px */
+.font-extra-large .text-base { font-size: 1.25rem; } /* 20px */
+.font-extra-large .text-lg { font-size: 1.5rem; } /* 24px */
+.font-extra-large .text-xl { font-size: 1.75rem; } /* 28px */
+.font-extra-large .text-2xl { font-size: 2rem; } /* 32px */
+.font-extra-large .text-3xl { font-size: 2.5rem; } /* 40px */
+.font-extra-large .text-4xl { font-size: 3rem; } /* 48px */
+.font-extra-large .text-5xl { font-size: 3.5rem; } /* 56px */
+
 /* (Removido bloco de teste com @apply para evitar alertas de lint) */
